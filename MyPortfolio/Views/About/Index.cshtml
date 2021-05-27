@@ -1,0 +1,68 @@
+@model MyPortfolio.ViewModels.AboutViewModel
+
+@{
+    ViewData["Title"] = "About Me";
+}
+
+<h1>About Me</h1>
+
+<h4>Who I am</h4>
+<hr/>
+
+<div>
+    <p class="personnal-description">@Html.DisplayFor(model => model.me.Description)</p>
+    <hr/>
+    <h4>Skills</h4>
+    <p>This is a list of my current skills, since I am study it is bound to grow and will be updated regularly</p>
+    <dl class="row">
+        @foreach (var skill in Model.skills)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayFor(modelSkill => skill.Type)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(modelSkill => skill.List)
+            </dd>
+        }
+    </dl>
+    <h4>Contact Informations</h4>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.me.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.me.Address), @Html.DisplayFor(model => model.me.City), @Html.DisplayFor(model => model.me.Country)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.me.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.me.Phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.me.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.me.Email)
+        </dd>
+        <dt class="col-sm-2">
+            Linkedin
+        </dt>
+        <dd class="col-sm-10">
+            <a href="https://www.linkedin.com/in/vaillant-feuvray/" target="_blank">linkedin.com/in/vaillant-feuvray/</a>
+        </dd>
+        <dt class="col-sm-2">
+            GitHub
+        </dt>
+        <dd class="col-sm-10">
+            <a href="https://github.com/VFEUVRAY" target="_blank">github.com/VFEUVRAY</a>
+        </dd>
+        <dt class="col-sm-2">
+            Email
+        </dt>
+        <dd class="col-sm-10">
+            <a href="mailto:feuvra_v@etna-alternance.net" target="_blank">feuvra_v@etna-alternance.net</a>
+        </dd>
+    </dl>
+</div>
+

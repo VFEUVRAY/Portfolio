@@ -1,0 +1,81 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using MyPortfolio.Areas.Identity.Data
+@using Microsoft.AspNetCore.Authorization
+
+@inject SignInManager<PortfolioUser> SignInManager
+@inject UserManager<PortfolioUser> UserManager
+@inject IAuthorizationService AuthorizationService
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyPortfolio</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img class="website_logo" src="~/favicon.ico" alt="icon"/>
+                </a>
+                <a class="navbar-name" asp-area="" asp-controller="Home" asp-action="Index">Vaillant FEUVRAY</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="About" asp-action="Index">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="MyProjects" asp-action="Index">Projects</a>
+                        </li>
+                        @if ((await AuthorizationService.AuthorizeAsync(User, "RequireAdmin")).Succeeded)
+                        {
+                            <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="Index">Administration</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Projects" asp-action="Index">Projects List</a>
+                            </li>
+                        }
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="footer_links_section">
+                <div>
+                    &copy; 2021 - Vaillant FEUVRAY - PortFolio - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+                <a href="https://www.linkedin.com/in/vaillant-feuvray/" target="_blank">Linkedin</a>
+                <a href="https://github.com/VFEUVRAY" target="_blank">GitHub</a>
+                <a href="mailto:feuvra_v@etna-alternance.net" target="_blank">Email: feuvra_v@etna-alternance.net</a>
+            </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

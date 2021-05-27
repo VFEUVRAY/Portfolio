@@ -1,0 +1,67 @@
+@model MyPortfolio.ViewModels.EditProjectViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Project</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="project.Id" />
+            <input type="hidden" asp-for="oldPicture" />
+            <div class="form-group">
+                <label asp-for="project.Title" class="control-label"></label>
+                <input asp-for="project.Title" class="form-control" />
+                <span asp-validation-for="project.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="project.Description" class="control-label"></label>
+                <input asp-for="project.Description" class="form-control" />
+                <span asp-validation-for="project.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Picture" class="control-label"></label>
+                <input asp-for="Picture" class="form-control" type="file"/>
+                <span asp-validation-for="Picture" class="text-danger"></span>
+            </div>
+            @*
+            <div class="form-group">
+                <label asp-for="Date_created" class="control-label"></label>
+                <input asp-for="Date_created" class="form-control" />
+                <span asp-validation-for="Date_created" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date_updated" class="control-label"></label>
+                <input asp-for="Date_updated" class="form-control" />
+                <span asp-validation-for="Date_updated" class="text-danger"></span>
+            </div>
+            *@
+            <div class="form-group">
+                <label asp-for="project.Link" class="control-label"></label>
+                <input asp-for="project.Link" class="form-control" />
+                <span asp-validation-for="project.Link" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Enabled" />  @Html.DisplayNameFor(model => model.Enabled)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

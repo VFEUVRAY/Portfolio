@@ -1,0 +1,30 @@
+@model MyPortfolio.ViewModels.AdminViewModel
+
+@{
+    ViewData["Title"] = "Administration";
+}
+
+<h1>Project Administration Page</h1>
+
+<h4>Project list</h4>
+
+<form asp-action="Index" asp-route-id=projectId>
+    <select id="projectId" name="projectId" asp-for="projectId">
+        @foreach (var project in Model.Projects)
+        {
+            <option value=@project.Id>@Html.DisplayFor(modelProject => project.Title)</option>
+        }
+    </select>
+    @*
+    <button asp-for="choice" type="submit" value=true>Edit</button>
+    <button asp-for="choice" type="submit" value=true>Delete</button>
+    *@
+    <input asp-for="edit" type="submit" value="edit">
+    <input asp-for="delete" type="submit" value="delete">
+</form>
+
+<script>
+    function submit(button){
+        button.value = true;
+    }
+</script>
