@@ -2,6 +2,10 @@
     height:40px;
 }
 
+main {
+	width: 100%;
+}
+
 .footer_links_section {
     display: flex;
     justify-content: space-between;
@@ -80,10 +84,14 @@ h1, h3, h4, dt {
     height: 120px;
     margin-right: 16px;
     border-radius: 50%;
-    -webkit-animation: fadein 2s;
-    -moz-animation: fadein 2s;
-    -o-animation: fadein 2s;
-    animation: fadein 2s;
+    -webkit-animation: fadein 1s;
+    -moz-animation: fadein 1s;
+    -o-animation: fadein 1s;
+    animation: fadein 1s;
+}
+
+.welcome_text{
+	font-size: 120%;
 }
 
 @keyframes fadein {
@@ -106,11 +114,15 @@ h1, h3, h4, dt {
     to { opacity: 1; }
 }
 
+.welcome_title {
+	text-align: center;
+}
+
 .welcome_links {
     display: flex;
     justify-content: space-between;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 350px;
+    margin-right: 350px;
 }
 
 .welcome_links h3, .welcome_links p {
@@ -141,8 +153,13 @@ h1, h3, h4, dt {
 .project_list_container {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-content: space-around;
+    /*flex-direction: column;*/
+    /*
+    flex-direction: row;
+    */
+    flex-wrap: wrap;
+    align-content: space-between;
+
 }
 
 .project_list_container hr {
@@ -153,7 +170,7 @@ h1, h3, h4, dt {
 }
 
 .individual_project_display {
-    width: 80%;
+    width: 45%;
     text-align: center;
     margin:20px;
     margin-right: auto;
@@ -162,26 +179,29 @@ h1, h3, h4, dt {
     border-width: 2px;
     border-radius: 8px;
     border-color: rgba(238, 220, 206, 0.692);
-    transition: 0.2s ease-in;
+    font-size: 115%;
+    background-color: rgb(36, 36, 36);
+    box-shadow: 0 0 15px rgb(0, 0, 0);
+    transition: 0.1s ease-in;
 }
 
 .individual_project_display:hover {
     background-color: rgb(42, 40, 44);
     height: auto;
     font-size: 130%;
-    transition: 0.2s ease-in;
+    transition: 0.1s ease-in;
 }
 
 .individual_project_display:hover .project_image {
     max-height: 300px;
     height: 300px;
-    transition: ease-in 0.2s;
+    transition: ease-in 0.1s;
 }
 
 .individual_project_display:active {
     background-color: rgb(42, 40, 44);
     size: 120%;
-    transition: 0.2s ease-in;
+    transition: 0.1s ease-in;
 }
 
 .project_title {
@@ -192,7 +212,7 @@ h1, h3, h4, dt {
 .project_image {
     max-height:200px;
     max-width: inherit;
-    transition: ease-in 0.2s;
+    transition: ease-in 0.1s;
 }
 
 .project_description {

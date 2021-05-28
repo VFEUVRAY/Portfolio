@@ -13,10 +13,10 @@ The list will be updated regularly</p>
     <li>Crowdin clone made in symfony (PHP, MySQL, Authorizations)</li>
     <li>Algorithms in C++</li>
     <li>This PortFolio you're currently exploring is a WIP in C# / ASP.NET</li>
+    <li>A pdf file parser with possibility to select specific words or sections to search for. In C#</li>
 </ul>
 <div class="project_list_container">
     @foreach (var project in Model) {
-        <hr/>
         <div class="individual_project_display">
             <h3 class="project_title">@project.Title</h3>
             @if (!String.IsNullOrEmpty(project.Picture)) {

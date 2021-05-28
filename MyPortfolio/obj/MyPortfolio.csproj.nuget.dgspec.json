@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/monkey/projets_etna/MyPortefolio/MyPortfolio/MyPortfolio.csproj": {}
+    "/home/haruna/Vaillant/projets_etna/portfolio/Portfolio/MyPortfolio/MyPortfolio.csproj": {}
   },
   "projects": {
-    "/home/monkey/projets_etna/MyPortefolio/MyPortfolio/MyPortfolio.csproj": {
+    "/home/haruna/Vaillant/projets_etna/portfolio/Portfolio/MyPortfolio/MyPortfolio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/monkey/projets_etna/MyPortefolio/MyPortfolio/MyPortfolio.csproj",
+        "projectUniqueName": "/home/haruna/Vaillant/projets_etna/portfolio/Portfolio/MyPortfolio/MyPortfolio.csproj",
         "projectName": "MyPortfolio",
-        "projectPath": "/home/monkey/projets_etna/MyPortefolio/MyPortfolio/MyPortfolio.csproj",
-        "packagesPath": "/home/monkey/.nuget/packages/",
-        "outputPath": "/home/monkey/projets_etna/MyPortefolio/MyPortfolio/obj/",
+        "projectPath": "/home/haruna/Vaillant/projets_etna/portfolio/Portfolio/MyPortfolio/MyPortfolio.csproj",
+        "packagesPath": "/home/haruna/.nuget/packages/",
+        "outputPath": "/home/haruna/Vaillant/projets_etna/portfolio/Portfolio/MyPortfolio/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/monkey/.nuget/NuGet/NuGet.Config"
+          "/home/haruna/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -97,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
         }
       }
     }
