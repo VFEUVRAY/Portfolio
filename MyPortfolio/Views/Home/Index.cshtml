@@ -3,7 +3,8 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome To My PortFolio</h1>
+    <h1 class="welcome_title">Welcome To My PortFolio</h1>
+    <hr class="section_divider_hr"/>
     <div class="welcome_presentation">
         <div class="welcome_picture">
             <img src="~/ressource_images/photo_etna.jpg" alt="Vaillant FEUVRAY">
@@ -13,6 +14,7 @@
             <p>I am attending an IT and Programmation bachelor at ETNA.<br>I mainly aim to improve my software programming skills.<br>This is where I will record my works, whether from school or personnal.</p>
         </div>
     </div>
+    <hr class="section_divider_hr"/>
     <div class="welcome_title">
         <h2 class="welcome_title">My Work</h2>
     </div>
@@ -20,11 +22,12 @@
         <a asp-controller="MyProjects" asp-action="Index"><h3>My Projects</h3></a>
         <a asp-controller="About" asp-action="Index"><h3>About Me</h3></a>
     </div>
+    <hr class="section_divider_hr"/>
     <div class="welcome_title">
         <h2 class="welcome_title">My Resume / Mon CV</h2>
     </div>
     <div class="welcome_links">
-        <a href="~/ressource_images/CV.pdf" download="CV Vaillant FEUVRAY"><p>Téléchargez mon CV! (Français)</p></a>
         <a href="~/ressource_images/RESUME.pdf" download="RESUME Vaillant FEUVRAY"><p>Download my Resume! (English)</p></a>
+        <a href="~/ressource_images/CV.pdf" download="CV Vaillant FEUVRAY"><p>Téléchargez mon CV! (Français)</p></a>
     </div>
 </div>

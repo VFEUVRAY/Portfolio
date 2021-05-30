@@ -5,28 +5,30 @@
 }
 
 <h1>My Projects</h1>
-<p>This is an Exhaustive list of my projects, whether they are meant for school or personnal<br>
+<hr class="section_divider_hr"/>
+<p>This is an exhaustive list of the projects I've worked on so far, whether they are meant for school or personnal<br>
 Some might lack an image or a link because I have lost the source files (made before I had a github account).
 The list will be updated regularly</p>
-<p>Currently Working on:</p>
+<h3>Currently Working on:</h3>
 <ul>
     <li>Crowdin clone made in symfony (PHP, MySQL, Authorizations)</li>
     <li>Algorithms in C++</li>
     <li>This PortFolio you're currently exploring is a WIP in C# / ASP.NET</li>
     <li>A pdf file parser with possibility to select specific words or sections to search for. In C#</li>
 </ul>
+<hr class="section_divider_hr"/>
 <div class="project_list_container">
     @foreach (var project in Model) {
         <div class="individual_project_display">
             <h3 class="project_title">@project.Title</h3>
             @if (!String.IsNullOrEmpty(project.Picture)) {
-                <a href="~/@project.Picture" target="_blank"><img src="~/@project.Picture" class="project_image"/></a>
+                <a href="@project.Link" target="_blank"><img src="~/@project.Picture" class="project_image"/></a>
             } else {
                 <img src="~/images/nopic.jpg" class="project_image"/>
             }
             <p class="project_description">@Html.DisplayFor(modelProject => project.Description)</p>
             @if (!String.IsNullOrEmpty(project.Link)) {
-                <a class="project_link" href="@project.Link" target="_blank">(Project Link)</a>
+                <a class="project_link" href="@project.Link" target="_blank">GitHub Link</a>
             }
         </div>
     }
